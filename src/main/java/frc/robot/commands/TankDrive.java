@@ -7,6 +7,7 @@
 
 package frc.robot.commands;
 import frc.robot.Robot;
+import frc.robot.RobotContainer;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 
@@ -17,6 +18,7 @@ public class TankDrive extends CommandBase {
   public TankDrive() {
     // Use requires() here to declare subsystem dependencies
     addRequirements(Robot.drive);
+    addRequirements(RobotContainer.drive);
   }
   // Called when the command is initially scheduled.
   @Override
