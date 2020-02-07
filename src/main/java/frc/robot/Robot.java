@@ -17,6 +17,8 @@ import frc.robot.subsystems.BeakSubsystem;
 import frc.robot.subsystems.DriveSubsystem;
 import frc.robot.subsystems.NeckSubsystem;
 import frc.robot.subsystems.TailSubsystem;
+import frc.robot.vision.FollowTarget;
+import frc.robot.vision.Limelight;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -30,6 +32,8 @@ public class Robot extends TimedRobot {
   public static TailSubsystem tail = new TailSubsystem();
   public static BeakSubsystem beak = new BeakSubsystem();
   public static NeckSubsystem neck = new NeckSubsystem();
+  public static FollowTarget follow = new FollowTarget(); 
+  public static Limelight limelight = new Limelight();
 
   Command m_autonomousCommand;
   RobotContainer m_robotContainer;
@@ -67,7 +71,8 @@ public class Robot extends TimedRobot {
    * This function is called once each time the robot enters Disabled mode.
    */
   @Override
-  public void disabledInit() {
+  public void disabledInit() {  
+    limelight.lightOff();
   }
 
   @Override
